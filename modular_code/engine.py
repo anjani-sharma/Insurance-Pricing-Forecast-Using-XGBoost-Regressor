@@ -1,7 +1,7 @@
 # import libraries
 from ml_pipeline import eda, model_performance, stats, utils
 import pandas as pd
-import projectpro
+
 
 
 # ignore warnings
@@ -15,7 +15,6 @@ print("Data read!")
 
 # split data
 X_train, X_test, y_train, y_test = utils.split_data(data, 'charges', 0.33, 42)
-projectpro.checkpoint('1e808c')
 print("Data split done!")
 
 
@@ -36,6 +35,6 @@ print("Data one hot encoded for xgboost")
 
 # train xgboost and evaluate xgboost
 y_pred_train_xgb, y_pred_test_xgb, xgb_bs_cv = utils.train_and_evaluate_xgboost(X_train, X_test, y_train, y_test)
-projectpro.checkpoint('1e808c')
+
 
 
